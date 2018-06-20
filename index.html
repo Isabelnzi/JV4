@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercice 4</title>
+  </head>
+  <body>
+    <form onsubmit="getInfo()">
+      <label for="lastname">Nom : </label><input type="text" name="lastname" id="lastname"/>
+      <label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname"/>
+      <label for="city">Ville : </label><input type="text" name="city" id="city"/>
+      <button  name="submit" id="submit">Valider</button>
+    </form>
+    <script>
+    //déclaration de la fonction
+    function getInfo(){
+      //déclaration des variables
+      var lastname = document.getElementById('lastname').value;
+      var firstname = document.getElementById('firstname').value;
+      var city = document.getElementById('city').value;
+      //test de sécurité
+      if((/^[a-zA-Z\-éèïçö]+/.test(lastname)== true)){
+        alert('Nom : ' + lastname +'\n' + 'Prénom : ' + firstname + '\n' + 'Ville : ' + city);
+      }
+      else{
+        alert('Identity false !');
+      }
+    }
+    </script>
+    <script src="script.js"></script>
+  </body>
+  </html>
